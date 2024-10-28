@@ -15,7 +15,6 @@ const RootNavigation = () => {
 	return (
 		<Stack>
 			<Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-			<StatusBar style="auto" />
 		</Stack>
 	)
 }
