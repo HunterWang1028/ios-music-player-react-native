@@ -2,9 +2,10 @@ import { unknownTrackImageUri } from '@/constants/images'
 import { useLastActiveTrack } from '@/hooks/useLastActiveTrack'
 import { defaultStyles } from '@/styles'
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View, ViewProps } from 'react-native'
+import { StyleSheet, TouchableOpacity, View, ViewProps } from 'react-native'
 import FastImage from 'react-native-fast-image'
 import { useActiveTrack } from 'react-native-track-player'
+import { MovingText } from './MovingText'
 import { PlayPauseButton, SkipToNextButton } from './PlayerControls'
 
 export const FloatingPlayer = ({ style }: ViewProps) => {
@@ -25,7 +26,11 @@ export const FloatingPlayer = ({ style }: ViewProps) => {
 					style={styles.trackArtworkImage}
 				/>
 				<View style={styles.trackTitleContainer}>
-					<Text style={styles.trackTitle}>{displayedTrack.title}</Text>
+					<MovingText
+						style={styles.trackTitle}
+						text={displayedTrack.title ?? ''}
+						animationThreshold={25}
+					/>
 				</View>
 
 				<View style={styles.trackControlsContainer}>
