@@ -1,4 +1,3 @@
-import { useNavigationSearch } from '@/app/hooks/useNavigationSearch'
 import library from '@/assets/data/library.json'
 import TracksList from '@/components/TracksList'
 import { screenPadding } from '@/constants/tokens'
@@ -6,6 +5,7 @@ import { trackTitleFilter } from '@/helpers/filter'
 import { defaultStyles } from '@/styles'
 import { useMemo } from 'react'
 import { ScrollView, View } from 'react-native'
+import { useNavigationSearch } from '../../../hooks/useNavigationSearch'
 
 const SongsScreen = () => {
 	const search = useNavigationSearch({

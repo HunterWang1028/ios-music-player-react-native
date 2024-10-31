@@ -14,7 +14,10 @@
 		},
 		"ios": {
 			"supportsTablet": true,
-			"bundleIdentifier": "com.music.player"
+			"bundleIdentifier": "com.music.player",
+			"infoPlist": {
+				"UIBackgroundModes": ["audio"]
+			}
 		},
 		"android": {
 			"adaptiveIcon": {
