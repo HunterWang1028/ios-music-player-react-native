@@ -35,6 +35,7 @@ export const TrackShortcutsMenu = ({ track, children }: TrackShortcutsMenuProps)
 				}
 			})
 			.with('add-to-playlist', async () => {
+				// @ts-expect-error
 				router.push({ pathname: '(modals)/addToPlaylist', params: { trackUrl: track.url } })
 			})
 			.otherwise(() => console.warn(`Unknown menu action ${id}`))
