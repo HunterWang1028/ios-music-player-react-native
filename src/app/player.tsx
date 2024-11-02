@@ -6,6 +6,7 @@ import { PlayerVolumeBar } from '@/components/PlayerVolumeBar'
 import { unknownTrackImageUri } from '@/constants/images'
 import { colors, fontSize, screenPadding } from '@/constants/tokens'
 import { usePlayerBackground } from '@/hooks/usePlayerBackground'
+import { useTrackPlayerFavorite } from '@/hooks/useTrackPlayerFavorite'
 import { defaultStyles, utilsStyles } from '@/styles'
 import { FontAwesome } from '@expo/vector-icons'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -20,8 +21,7 @@ const PlayerScreen = () => {
 	const { imageColors } = usePlayerBackground(activeTrack?.artwork ?? unknownTrackImageUri)
 	const { top, bottom } = useSafeAreaInsets()
 
-	const isFavorite = false
-	const togglefavorite = () => {}
+	const { isFavorite, toggleFavorite } = useTrackPlayerFavorite()
 
 	if (!activeTrack) {
 		return (
@@ -79,7 +79,7 @@ const PlayerScreen = () => {
 										size={20}
 										color={isFavorite ? colors.primary : colors.icon}
 										style={{ marginHorizontal: 14 }}
-										onPress={togglefavorite}
+										onPress={toggleFavorite}
 									/>
 								</View>
 								{/* Track artist */}
